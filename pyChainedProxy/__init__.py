@@ -592,10 +592,10 @@ class socksocket(socket.socket):
     def makefile(self, mode="r", bufsize=-1):
         self.__makefile_refs += 1
         if six.PY2:
-            print("Python 2")
+            # print("Python 2")
             return socket._fileobject(self, mode, bufsize, close=True)
         else:
-            print("Python 3")
+            # print("Python 3")
             return socket.SocketIO(self, mode)
 
     def addproxy(self, proxytype=None, addr=None, port=None, rdns=True, username=None, password=None, certnames=None):
